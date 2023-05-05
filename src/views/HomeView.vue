@@ -8,6 +8,7 @@ document.addEventListener("click", (e) => {
 
 <template>
   <main>
+    {{ $store.state.questions }}
     <TheWelcome />
   </main>
 </template>
