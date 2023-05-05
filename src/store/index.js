@@ -9,7 +9,10 @@ const store = createStore({
   actions: {
     fetchQuesttion ({ commit }) {
       // fetch data from API
-      commit('setQuestions', data)
+
+      // this.$axios.get('/questions')
+
+      commit('setQuestions', ['test'])
     }
   },
   mutations: {

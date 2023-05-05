@@ -1,9 +1,16 @@
-<script setup>
+<script>
 import TheWelcome from '../components/TheWelcome.vue'
 
-document.addEventListener("click", (e) => {
-  window.close();
-})
+export default {
+  name: 'HomeView',
+  components: {
+    TheWelcome
+  },
+  mounted() {
+    this.$store.dispatch('fetchQuesttion')
+  }
+}
+
 </script>
 
 <template>
