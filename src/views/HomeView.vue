@@ -1,11 +1,6 @@
 <script>
-import TheWelcome from '../components/TheWelcome.vue'
-
 export default {
   name: 'HomeView',
-  components: {
-    TheWelcome
-  },
   mounted() {
     this.$store.dispatch('fetchQuesttion')
   }
@@ -16,6 +11,5 @@ export default {
 <template>
   <main>
     {{ $store.state.questions }}
-    <TheWelcome />
   </main>
 </template>
