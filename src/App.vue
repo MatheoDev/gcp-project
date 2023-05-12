@@ -8,8 +8,8 @@ export default {
   <header>
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">GCP</RouterLink>
+        <RouterLink to="/about">Contact</RouterLink>
       </nav>
     </div>
   </header>
