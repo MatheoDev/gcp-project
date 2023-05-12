@@ -7,14 +7,24 @@ on:
     branches:
       - master
 jobs:
-  deploy_live_website:
-    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
+  build_and_preview:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm install && npm run build
-      - uses: firebase/github-actions/hosting-deploy@v0
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GIGA_CHAD_PROJECT }}'
-          projectId: giga-chad-project
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of pull request analysis
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+      - name: npm install, build
+        run: |
+          npm install
+          npm run build --if-present
+      - name: Deploy to Firebase Hosting
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting --project giga-chad-project
+        env:
+          FIREBASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
