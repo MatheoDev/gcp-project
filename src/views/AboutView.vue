@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1>Contact page testing</h1>
+    <div>awesome modify</div>
   </div>
 </template>
 
