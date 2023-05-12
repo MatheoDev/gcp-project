@@ -1,9 +1,15 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+<script>
+export default {
+  name: 'HomeView',
+  mounted() {
+    this.$store.dispatch('fetchQuesttion')
+  }
+}
+
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    {{ $store.state.questions }}
   </main>
 </template>
