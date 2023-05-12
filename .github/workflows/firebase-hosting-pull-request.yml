@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm install && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: firebase/github-actions/hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GIGA_CHAD_PROJECT }}'
