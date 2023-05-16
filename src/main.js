@@ -8,7 +8,7 @@ import './assets/main.css'
 // create the app
 const app = createApp(App)
 // config axios
-app.config.globalProperties.$http = axios
+app.config.globalProperties.$axios = axios
 store.$axios = axios
 // mount the app and using
 app
