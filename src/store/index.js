@@ -58,7 +58,7 @@ const store = createStore({
 
       state.loading = true
       // post data to API
-      this.$axios.post(`/forms/${state.form.id}`, {
+      this.$axios.post('/result', {
           form: state.form,
         })
         .then(response => {
