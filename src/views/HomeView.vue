@@ -2,7 +2,7 @@
 export default {
   name: 'HomeView',
   mounted() {
-    this.$store.dispatch('initMock')
+    // this.$store.dispatch('initMock')
   },
   methods: {
     _goStep(step) {
