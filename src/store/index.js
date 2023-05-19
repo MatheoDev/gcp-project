@@ -58,9 +58,7 @@ const store = createStore({
 
       state.loading = true
       // post data to API
-      this.$axios.post('/result', {
-          form: state.form,
-        })
+      this.$axios.post('/result', state.form)
         .then(response => {
           // todo à verifier
           commit('setResult', response.data)
