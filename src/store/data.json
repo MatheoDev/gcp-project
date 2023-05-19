@@ -1,0 +1,56 @@
+{
+  "id": 9,
+  "owner": {
+      "id": 4,
+      "firstname": "paul",
+      "lastname": "mabite",
+      "title": "Aspirant"
+  },
+  "inputs": [
+      {
+          "id": 16,
+          "question": {
+              "id": 16,
+              "title": "As-tu l'expertise de Xavier Dupond De Ligones en BTP ?",
+              "points": 10
+          },
+          "valueUser": null
+      },
+      {
+          "id": 17,
+          "question": {
+              "id": 9,
+              "title": "Piques-tu les moustiques ?",
+              "points": 1
+          },
+          "valueUser": null
+      },
+      {
+          "id": 18,
+          "question": {
+              "id": 2,
+              "title": "Bois-tu un litre de SP98 tous les jours ?",
+              "points": 8
+          },
+          "valueUser": null
+      },
+      {
+          "id": 19,
+          "question": {
+              "id": 18,
+              "title": "Piques-tu les moustiques ?",
+              "points": 10
+          },
+          "valueUser": null
+      },
+      {
+          "id": 20,
+          "question": {
+              "id": 3,
+              "title": "Es-tu capable de faire 1000 pompes par secondes ?",
+              "points": 6
+          },
+          "valueUser": null
+      }
+  ]
+}
