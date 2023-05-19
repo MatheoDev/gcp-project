@@ -22,6 +22,11 @@ export default {
       <div class="quote">Calculez votre pourcentage de CHAD</div>
     </div>
 
+    <div class="alerte" v-if="$store.state.message.length">
+      <div class="alerte__title">Alerte</div>
+      <div class="alerte__content" v-for="msg in $store.state.message" :key="msg">{{ msg }}</div>
+    </div>
+
     <div class="loading" v-if="$store.state.loading">
       <!-- faire un loading en css -->
       <div class="loading__spinner"></div>
@@ -41,7 +46,7 @@ export default {
           <input type="text" id="lastname" v-model="$store.state.input.lastname" placeholder="Dupont" />
         </div>
       </div>
-      <button type="button" @click="$store.dispatch('fetchQuesttion')">Suivant</button>
+      <button type="button" @click="$store.dispatch('fetchQuestion')">Suivant</button>
     </form>
 
     <!-- Ensuite on affiche les questions -->
@@ -89,6 +94,26 @@ export default {
   font-size: 2rem;
 }
 .jumbotron .quote {
+  color: #fff;
+  font-size: 1rem;
+  border-left: 2px solid #fff;
+  padding-left: 0.8rem;
+  margin: 1rem 0;
+}
+.alerte {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  background-color: rgb(199, 0, 0);
+  padding: 1rem;
+}
+.alerte__title {
+  color: #fff;
+  font-size: 2rem;
+}
+.alerte__content {
   color: #fff;
   font-size: 1rem;
   border-left: 2px solid #fff;

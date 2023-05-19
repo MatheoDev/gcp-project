@@ -12,6 +12,7 @@ const store = createStore({
       result: {},
       step: 0,
       loading: false,
+      message: []
     }
   },
   actions: {
@@ -19,7 +20,16 @@ const store = createStore({
       // mock data
       commit('setForm', data)
     },
-    fetchQuesttion({ state, commit }) {
+    fetchQuestion({ state, commit }) {
+      if (state.message.length) {
+        state.message = []
+      }
+
+      if (state.input.firstname === '' || state.input.lastname === '') {
+        state.message.push('Veuillez renseigner votre prénom et votre nom')
+        return
+      }
+
       state.loading = true
       // fetch data from API
       this.$axios.post('/forms', state.input)
@@ -37,6 +47,15 @@ const store = createStore({
         })
     },
     postQuestions({ state, commit }) {
+      if (state.message.length) {
+        state.message = []
+      }
+
+      if (state.form.inputs.some(input => input.valueUser === null)) {
+        state.message.push('Veuillez répondre à toutes les questions')
+        return
+      }
+
       state.loading = true
       // post data to API
       this.$axios.post(`/forms/${state.form.id}`, {
@@ -74,6 +93,7 @@ const store = createStore({
       state.result = {}
       state.step = 0
       state.loading = false
+      state.message = []
     }
   }
 })
